@@ -46,7 +46,6 @@ export default function Resultados() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
             {resultados.map((res) => {
               const estados = res.dados;
-              const benchmarkingId = res.benchmarking_id
 
               return (
                 <div
@@ -54,9 +53,8 @@ export default function Resultados() {
                   className="bg-slate-100 border border-gray-300 rounded-xl p-5 shadow hover:shadow-lg transition-shadow duration-300"
                 >
                   <h2 className="text-xl font-semibold mb-2">
-                    Benchmark de {res.periodo}
+                    {res.periodo}
                   </h2>
-                  <p className="text-sm text-gray-600 mb-2">{benchmarkingId}</p>
 
                   <ul className="text-sm space-y-1 grid grid-cols-1 md:grid-cols-2 gap-4">
                     {estados.map((item, idx) => (
