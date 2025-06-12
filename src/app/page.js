@@ -1,9 +1,14 @@
 'use client'
 
 import SelectState from "@/components/inputs/SelectState";
+import ResultModal from "@/components/modal/ResultModal";
+import api from "@/utils/api";
 import { useState } from "react";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [benchmarkId, setBenchmarkId] = useState(null);
+  const [benchmarkNome, setBenchmarkNome] = useState("");
   const [benchmark, setBenchmark] = useState({
     nome: "",
     estado_1: "",
@@ -12,6 +17,39 @@ export default function Home() {
     data_fim: ""
   });
 
+  const createBenchmark = async () => {
+    try {
+      const result = await api.post("/benchmarkings", benchmark);
+      const benchmarking = result.data;
+
+      if (benchmarking.message) {
+        alert(benchmarking.message);
+        setBenchmarkId(benchmarking.benchmarking.id);
+        setBenchmarkNome(benchmarking.benchmarking.nome);
+        setIsModalOpen(true);
+        return;
+      }
+
+      setBenchmarkId(benchmarking.id);
+      setBenchmarkNome(benchmarking.nome);
+      setIsModalOpen(true);
+    } catch (error) {
+      alert("Erro ao criar benchmark!");
+    }
+  };
+
+  const checkInputs = () => {
+    const campos = Object.values(benchmark);
+    const vazio = campos.some(valor => valor === "");
+
+    if (vazio) {
+      alert("Preencha todos os campos");
+      return;
+    }
+
+    createBenchmark();
+  };
+
   return (
     <>
       <main className="bg-blue-300 min-h-screen p-6 flex justify-center items-center">
@@ -19,12 +57,11 @@ export default function Home() {
           <div className="mb-6 text-center">
             <h2 className="text-3xl font-bold mb-2">Criar Benchmark</h2>
             <p className="text-gray-600">
-              Preencha os campos abaixo, especificando o período que deseja comparar.
+              Preencha os campos abaixo, especificando o período que deseja comparar e os estados.
             </p>
           </div>
 
           <form className="space-y-4">
-
             <div>
               <label className="block mb-1 font-medium">Nome do Benchmark</label>
               <input
@@ -81,8 +118,9 @@ export default function Home() {
 
             <div className="flex justify-center mt-6">
               <button
+                onClick={checkInputs}
                 type="submit"
-                className="font-bold text-white rounded-md bg-blue-500 hover:bg-blue-600 px-6 py-2 min-w-44 hover:cursor-pointer"
+                className="font-bold text-white rounded-md bg-blue-500 hover:bg-blue-600 px-6 py-2 min-w-44"
               >
                 Criar
               </button>
@@ -90,6 +128,13 @@ export default function Home() {
           </form>
         </section>
       </main>
+
+      <ResultModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        benchmarking_id={benchmarkId}
+        nome={benchmarkNome}
+      />
     </>
   );
 }
