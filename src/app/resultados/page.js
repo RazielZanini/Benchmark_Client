@@ -69,10 +69,6 @@ export default function Resultados() {
                     ))}
                   </ul>
                   <section className="mt-4 flex flex-row gap-4">
-                    <LuPencilLine
-                      // onClick={() => }
-                      size={30}
-                      className="rounded-md text-amber-500 shadow-md hover:scale-105 transform cursor-pointer" />
                     <LuTrash2
                       onClick={() => deleteResult(res._id)}
                       size={30}
