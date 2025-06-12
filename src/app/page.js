@@ -59,6 +59,7 @@ export default function Home() {
             <p className="text-gray-600">
               Preencha os campos abaixo, especificando o período que deseja comparar e os estados.
             </p>
+            <p>A base de dados fornece dados entre 08/03/2020 até 27/03/2022</p>
           </div>
 
           <form className="space-y-4">
