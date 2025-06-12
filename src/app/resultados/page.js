@@ -2,7 +2,7 @@
 
 import api from "@/utils/api";
 import { useEffect, useState } from "react";
-import { LuTrash2, LuPencilLine } from "react-icons/lu";
+import { LuTrash2 } from "react-icons/lu";
 
 export default function Resultados() {
 
