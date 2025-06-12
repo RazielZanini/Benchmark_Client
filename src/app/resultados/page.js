@@ -53,7 +53,7 @@ export default function Resultados() {
                   className="bg-slate-100 border border-gray-300 rounded-xl p-5 shadow hover:shadow-lg transition-shadow duration-300"
                 >
                   <h2 className="text-xl font-semibold mb-2">
-                    {res.periodo}
+                    Periodo: {res.periodo}
                   </h2>
 
                   <ul className="text-sm space-y-1 grid grid-cols-1 md:grid-cols-2 gap-4">
