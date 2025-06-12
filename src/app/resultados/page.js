@@ -37,10 +37,9 @@ export default function Resultados() {
 
   return (
     <main className="bg-blue-300 min-h-screen p-6 flex justify-center items-start">
-      <section className="bg-white text-black p-6 rounded-lg shadow-md w-full min-h-screen w-full">
+      <section className="bg-white text-black p-6 rounded-lg shadow-md min-h-screen w-full">
         <h1 className="text-3xl font-bold mb-6 text-center">Resultados do Benchmark</h1>
 
-        {/* Suponha que `resultados` seja um array de objetos */}
         {resultados.length === 0 ? (
           <p className="text-center text-gray-600">Nenhum resultado encontrado.</p>
         ) : (
