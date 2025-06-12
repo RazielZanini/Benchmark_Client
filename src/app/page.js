@@ -24,13 +24,13 @@ export default function Home() {
 
       if (benchmarking.message) {
         alert(benchmarking.message);
-        setBenchmarkId(benchmarking.benchmarking.id);
+        setBenchmarkId(benchmarking.benchmarking._id);
         setBenchmarkNome(benchmarking.benchmarking.nome);
         setIsModalOpen(true);
         return;
       }
 
-      setBenchmarkId(benchmarking.id);
+      setBenchmarkId(benchmarking._id);
       setBenchmarkNome(benchmarking.nome);
       setIsModalOpen(true);
     } catch (error) {
@@ -119,7 +119,7 @@ export default function Home() {
             <div className="flex justify-center mt-6">
               <button
                 onClick={checkInputs}
-                type="submit"
+                type="button"
                 className="font-bold text-white rounded-md bg-blue-500 hover:bg-blue-600 px-6 py-2 min-w-44 cursor-pointer"
               >
                 Criar
