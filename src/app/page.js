@@ -120,7 +120,7 @@ export default function Home() {
               <button
                 onClick={checkInputs}
                 type="submit"
-                className="font-bold text-white rounded-md bg-blue-500 hover:bg-blue-600 px-6 py-2 min-w-44"
+                className="font-bold text-white rounded-md bg-blue-500 hover:bg-blue-600 px-6 py-2 min-w-44 cursor-pointer"
               >
                 Criar
               </button>
