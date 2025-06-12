@@ -41,10 +41,11 @@ export default function ResultModal({ isOpen, onClose, benchmarking_id, nome }) 
             <p>{nome.toUpperCase()}</p>
             <p><strong>Período:</strong> {resultados.periodo}</p>
             <div className="mt-4">
-              <ul className="list-disc ml-6">
-                <li>Casos confirmados: {resultados.dados[0].estado}: {resultados.dados?.[0]?.casos_confirmados} vs {resultados.dados[1].estado}: {resultados.dados?.[1]?.casos_confirmados}</li>
-                <li>Mortes: {resultados.dados[0].estado}: {resultados.dados?.[0]?.mortes} vs {resultados.dados[1].estado}: {resultados.dados?.[1]?.mortes}</li>
-                <li>População: {resultados.dados[0].estado}: {resultados.dados?.[0]?.populacao?.toLocaleString()} vs {resultados.dados[1].estado}: {resultados.dados?.[1]?.populacao?.toLocaleString()}</li>
+              <ul className="font-bold list-none">
+                <li>Casos confirmados: {resultados.dados[0].estado}: ({resultados.dados?.[0]?.casos_confirmados}) X {resultados.dados[1].estado}: ({resultados.dados?.[1]?.casos_confirmados})</li>
+                <li>Mortes: {resultados.dados[0].estado}: ({resultados.dados?.[0]?.mortes}) X {resultados.dados[1].estado}: ({resultados.dados?.[1]?.mortes})</li>
+                <li>População: {resultados.dados[0].estado}: ({resultados.dados?.[0]?.populacao?.toLocaleString()}) X {resultados.dados[1].estado}: ({resultados.dados?.[1]?.populacao?.toLocaleString()})</li>
+                <li></li>
               </ul>
             </div>
           </>
