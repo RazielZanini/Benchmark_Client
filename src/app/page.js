@@ -18,6 +18,14 @@ export default function Home() {
   });
 
   const createBenchmark = async () => {
+    const dataInicio = new Date(benchmark.data_inicio)
+    const dataFim = new Date(benchmark.data_fim)
+
+    if (dataInicio > dataFim) {
+      alert("A data inicial não pode ser maior que a data final")
+      return
+    }
+
     try {
       const result = await api.post("/benchmarkings", benchmark);
       const benchmarking = result.data;
