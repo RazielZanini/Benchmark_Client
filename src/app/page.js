@@ -79,6 +79,8 @@ export default function Home() {
                 <label className="block mb-1 font-medium">Data de Início</label>
                 <input
                   className="w-full border border-blue-500 rounded px-4 py-2"
+                  min="2020-03-08"
+                  max="2022-03-27"
                   type="text"
                   placeholder="DD/MM/AAAA"
                   onFocus={(e) => (e.target.type = "date")}
@@ -94,6 +96,8 @@ export default function Home() {
                 <input
                   className="w-full border border-blue-500 rounded px-4 py-2"
                   type="text"
+                  min="2020-03-08"
+                  max="2022-03-27"
                   placeholder="DD/MM/AAAA"
                   onFocus={(e) => (e.target.type = "date")}
                   onBlur={(e) => {
