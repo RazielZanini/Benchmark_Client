@@ -37,7 +37,6 @@ export default function ResultModal({ isOpen, onClose, benchmarking_id, nome }) 
           <p className="text-center">Carregando...</p>
         ) : resultados ? (
           <>
-            {console.log(resultados)}
             <p>{nome.toUpperCase()}</p>
             <p><strong>Período:</strong> {resultados.periodo}</p>
             <div className="mt-4">

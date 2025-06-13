@@ -30,7 +30,6 @@ export default function Benchmarks() {
       setReload(!reload)
     } catch (error) {
       alert("Erro ao excluir benchmark")
-      console.log(error)
     }
   }
 

@@ -13,11 +13,9 @@ export default function Resultados() {
     const loadResults = async () => {
       try {
         const res = await api.get("/resultados")
-        console.log(res.data)
         setResultados(res.data)
       } catch (error) {
         alert("Erro ao carregar resultados")
-        console.log(error)
       }
     }
 
@@ -31,7 +29,6 @@ export default function Resultados() {
       setReload(!reload)
     } catch (error) {
       alert("Erro ao excluir resultado")
-      console.log(error)
     }
   }
 
