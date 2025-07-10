@@ -1,4 +1,4 @@
-# 📊 Benchmark Planisa
+# 📊 Benchmark Covid-19
 
 Sistema para criação e visualização de comparativos (benchmarks) de dados relacionados à COVID-19 entre estados brasileiros.
 
