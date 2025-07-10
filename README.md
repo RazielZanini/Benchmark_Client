@@ -29,5 +29,5 @@ Sistema para criação e visualização de comparativos (benchmarks) de dados re
 ### 🔁 Clonar o Repositório
 
 ```bash
-git clone https://github.com/RazielZanini/BenchMark_Planisa_Server.git
-cd BenchMark_Planisa_Server
+git clone https://github.com/RazielZanini/BenchMark_Server.git
+cd BenchMark_Server
